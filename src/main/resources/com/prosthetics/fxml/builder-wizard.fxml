@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane fitToWidth="true" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.prosthetics.ui.controller.BuilderWizardController">
+    <VBox spacing="16" styleClass="tab-content">
+        <padding>
+            <Insets top="20" right="30" bottom="20" left="30"/>
+        </padding>
+
+        <Label text="Step 1 — Limb &amp; Socket" styleClass="section-title"/>
+        <GridPane hgap="12" vgap="10">
+            <columnConstraints>
+                <ColumnConstraints minWidth="140"/>
+                <ColumnConstraints minWidth="220" hgrow="ALWAYS"/>
+            </columnConstraints>
+
+            <Label text="Limb type:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="limbTypeField" promptText="e.g. Transfemoral (above-knee)"
+                       GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="Socket type:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <ChoiceBox fx:id="socketTypeChoice" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <Label text="Socket material:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <ChoiceBox fx:id="materialChoice" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+            <Label text="Socket size (cm):" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <TextField fx:id="socketSizeField" promptText="e.g. 34.5"
+                       GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+        </GridPane>
+
+        <Separator/>
+
+        <Label text="Step 2 — Joint &amp; Power" styleClass="section-title"/>
+        <GridPane hgap="12" vgap="10">
+            <columnConstraints>
+                <ColumnConstraints minWidth="140"/>
+                <ColumnConstraints minWidth="220" hgrow="ALWAYS"/>
+            </columnConstraints>
+
+            <Label text="Joint system:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <ChoiceBox fx:id="jointTypeChoice" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="Power source:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <ChoiceBox fx:id="powerTypeChoice" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+        </GridPane>
+
+        <Separator/>
+
+        <Label text="Step 3 — Sensors (require a power source, except Pressure/Temperature)"
+               styleClass="section-title" wrapText="true"/>
+        <HBox spacing="20">
+            <CheckBox fx:id="myoelectricSensorCheck" text="Myoelectric"/>
+            <CheckBox fx:id="pressureSensorCheck" text="Pressure"/>
+            <CheckBox fx:id="gyroscopicSensorCheck" text="Gyroscopic"/>
+            <CheckBox fx:id="temperatureSensorCheck" text="Temperature"/>
+        </HBox>
+
+        <Separator/>
+
+        <Label text="Step 4 — Cosmetic Cover" styleClass="section-title"/>
+        <GridPane hgap="12" vgap="10">
+            <columnConstraints>
+                <ColumnConstraints minWidth="140"/>
+                <ColumnConstraints minWidth="220" hgrow="ALWAYS"/>
+            </columnConstraints>
+
+            <Label text="Color / skin tone:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="coverColorField" promptText="e.g. Natural Beige"
+                       GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="Finish:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="coverFinishField" promptText="e.g. Matte, Glossy, Realistic Skin Texture"
+                       GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+        </GridPane>
+
+        <HBox spacing="12" alignment="CENTER_LEFT">
+            <Button text="Build Prosthesis" onAction="#handleBuild" styleClass="primary-button"/>
+        </HBox>
+
+        <Separator/>
+
+        <Label text="Result" styleClass="section-title"/>
+        <TextArea fx:id="resultArea" editable="false" prefRowCount="8" wrapText="true"/>
+
+        <Label text="Save this configuration as a new reusable template:" styleClass="hint-label"/>
+        <HBox spacing="12" alignment="CENTER_LEFT">
+            <TextField fx:id="saveAsTemplateNameField" promptText="Template name" HBox.hgrow="ALWAYS"/>
+            <Button text="Save as Template" onAction="#handleSaveAsTemplate" styleClass="secondary-button"/>
+        </HBox>
+    </VBox>
+</ScrollPane>

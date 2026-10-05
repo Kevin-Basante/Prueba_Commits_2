@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox spacing="20" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.prosthetics.ui.controller.TemplateGalleryController"
+      styleClass="tab-content">
+    <padding>
+        <Insets top="20" right="30" bottom="20" left="30"/>
+    </padding>
+
+    <VBox spacing="10" prefWidth="320">
+        <Label text="Clinical Templates (Prototypes)" styleClass="section-title"/>
+        <ListView fx:id="templateListView" VBox.vgrow="ALWAYS"/>
+        <Button text="Clone &amp; Customize" onAction="#handleCloneAndCustomize" styleClass="primary-button"/>
+    </VBox>
+
+    <VBox spacing="10" HBox.hgrow="ALWAYS">
+        <Label text="Template Details" styleClass="section-title"/>
+        <TextArea fx:id="templateDetailsArea" editable="false" wrapText="true" VBox.vgrow="ALWAYS"/>
+    </VBox>
+
+</HBox>

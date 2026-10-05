@@ -1,0 +1,60 @@
+.root-pane {
+    -fx-background-color: #f4f6f8;
+    -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+.header-bar {
+    -fx-background-color: #1f2d3d;
+}
+
+.app-title {
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.tab-content {
+    -fx-background-color: #f4f6f8;
+}
+
+.section-title {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1f2d3d;
+}
+
+.hint-label {
+    -fx-font-style: italic;
+    -fx-text-fill: #5b6b79;
+}
+
+.primary-button {
+    -fx-background-color: #2e7d32;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8 20 8 20;
+    -fx-background-radius: 4;
+}
+
+.primary-button:hover {
+    -fx-background-color: #256428;
+}
+
+.secondary-button {
+    -fx-background-color: #3f6ea5;
+    -fx-text-fill: white;
+    -fx-padding: 6 16 6 16;
+    -fx-background-radius: 4;
+}
+
+.secondary-button:hover {
+    -fx-background-color: #33587f;
+}
+
+.text-area, .text-field, .choice-box, .list-view {
+    -fx-background-radius: 4;
+}
+
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: #1f2d3d;
+}
